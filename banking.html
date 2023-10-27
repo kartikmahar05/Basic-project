@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Banking</title>
+</head>
+<style>
+    *{
+       font-family: cursive;
+       font-weight: 300px;
+       color: rgb(0, 0, 0);
+       background-color: skyblue;
+       text-align: center;
+    }
+    .inp{
+        height: 35px;
+        width: 350px;
+
+    }
+</style>
+<body>
+    <h1> FD INVESTMENT</h1>
+    <label>ENTER THE PRINCIPAL AMMOUNT</label>
+    <input type="number" name="" id="Principal" class="inp"><br><br>
+    <label for="">TIME IN YEARS:</label>
+    <input type="number" name="" id="time" class="inp"><br><br>
+    <label for="">SELECT BANK</label>
+    <select id="bank" value="" onchange="interest()" >
+    <option value="SBI" id="">SBI</option>
+    <option value="PNB" id="">PNB</option>
+    <option value="ICICI" id="">ICICI</option>
+    <option value="HDFC" id="">HDFC</option>
+    </select>
+
+    <h1>YOUR RATE OF INTEREST IS:</h1>
+    <h3 id="interest"></h3><br>
+    <h1>Total Amount</h1>
+    <h3 id="amount"></h3>
+    
+</body>
+<script>
+    function interest(){
+        let p=document.getElementById("Principal")
+        let t=document.getElementById("time")
+        let o=document.getElementById("bank")
+        let i=document.getElementById("interest")
+        let a=document.getElementById("amount")
+        if(o.value=="SBI"){
+            let result=(p.value*t.value*7.5)/100;
+            i.innerHTML=result;
+            let total=Number.parseFloat(p.value)+Number.parseFloat(result);
+            a.innerHTML=total;
+        }
+        if(o.value=="PNB"){
+            let result=(p.value*t.value*8.5)/100;
+            i.innerHTML=result;
+            let total=Number.parseFloat(p.value)+Number.parseFloat(result);
+            a.innerHTML=total;
+        }
+        if(o.value=="ICICI"){
+            let result=(p.value*t.value*9.5)/100;
+            i.innerHTML=result;
+            let total=Number.parseFloat(p.value)+Number.parseInt(result);
+            a.innerHTML=total;
+        }
+        if(o.value=="HDFC"){
+            let result=(p.value*t.value*5.5)/100;
+            i.innerHTML=result;
+            let total=Number.parseFloat(p.value)+Number.parseInt(result);
+            a.innerHTML=total;
+        }
+
+        
+    }
+</script>
+</html>
